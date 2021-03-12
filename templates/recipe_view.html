@@ -1,0 +1,12 @@
+{% extends 'home.html' %}
+{% block recipe %}
+<hr>
+<h2>{{title}}</h2>
+<hr>
+<p>
+<img src="{{main_image}}"></img></p>
+{{open(recipe,'r').read()|safe}}
+<br><br><br><br><br><br><hr><p>
+Tags: {{tags}}
+</p><hr>
+{% endblock %}

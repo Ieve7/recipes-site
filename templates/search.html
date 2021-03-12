@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+{% block recipe %}
+{% if cookbook.iloc[0]['hits'] == 0 and searched %}
+No hits yet... please consider contributing recipes at https://fbi.gov/tips <br><br><br>
+{% endif %}
+<hr>
+{% for i in cookbook.index %}
+<p>
+  <a href='/recipe/{{i}}'>{{cookbook.loc[i]['title']}}</a>
+  <button onclick='show("{{i}}")'>preview</button>
+  <img id="{{i}}" src=''></img>
+</p>
+<script>
+function show(id){
+  var image = document.getElementById(id);
+  image.style.display = 'block';
+  image.src = '/image/'+id;
+}
+</script>
+{% endfor %}
+{% endblock %}

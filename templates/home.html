@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+body{
+  text-align:center;
+  background: #fafaff url({{url_for('static',filename='img/bg.png')}}) top repeat-x;}
+h1 a{color:white;text-decoration: none;}
+h1 a:hover{color:white;text-decoration: none}
+form{
+  width:100%;padding: 0 0 20px 0;
+}form input{
+  width:333px;}
+ol, ul, b{
+  text-align:left;}
+b{
+  width:100%;
+  display:block;}
+img{
+  max-height:600px;
+  margin-left: 10px; margin-right:auto;}
+hr{
+  height:1px;
+  border-width:1;
+  color:#ccd;
+  background-color:#ccd
+}
+p{text-align:left;}
+a:hover{
+  text-decoration:none;
+  color: red;
+}
+</style>
+</head>
+<body>
+          <h1><a href='/'>Easy Pea</a></h1>
+          <form action='{{url_for("search")}}' method='post'>
+            <input name='query' type='text' autocomplete="off" placeholder='search recipes...'></input>
+            <button type='submit'>Search</button>
+          </form>
+          {% block recipe %}
+          {% endblock %}
+
+
+
+
+</body>
+</html>
