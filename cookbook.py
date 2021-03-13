@@ -2,7 +2,7 @@ import pandas as pd
 import pathlib
 import sys,os
 sys.path = sys.path + [os.path.abspath(os.path.dirname(__file__))]
-RECIPES_PATH = r'.\recipes'
+RECIPES_PATH = r'recipes'
 MAX_TITLE_LENGTH = 99
 
 class cookbook:
