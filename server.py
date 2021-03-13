@@ -34,4 +34,5 @@ def view_recipe(index):
                                               open=open)
 
 if __name__ == '__main__':
-    app.run(debug=1)
+    #app.run(debug=1)
+    app.run(threaded=True, port=5000)
